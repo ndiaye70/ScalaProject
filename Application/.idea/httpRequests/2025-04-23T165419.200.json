@@ -1,0 +1,10 @@
+[
+  {
+    "datePaiement": "2025-04-10T14:00:00",
+    "id": 1,
+    "mode": "Espèce",
+    "montant": 50000.00,
+    "patientId": 1,
+    "reference": ""
+  }
+]

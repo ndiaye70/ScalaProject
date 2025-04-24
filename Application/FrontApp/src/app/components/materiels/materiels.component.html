@@ -1,0 +1,68 @@
+<div class="materiels-container">
+
+  <!-- Header -->
+  <div class="header-row">
+    <h2>Gestion des Matériels</h2>
+    <button mat-raised-button color="primary" (click)="ajouterMateriel()">Ajouter un Matériel</button>
+  </div>
+
+  <!-- Barre de recherche -->
+  <mat-form-field appearance="outline" class="search-bar">
+    <mat-label>Rechercher un matériel</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Nom, type, statut...">
+  </mat-form-field>
+
+  <!-- Tableau -->
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="full-width-table">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let mat">{{ mat.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom</th>
+        <td mat-cell *matCellDef="let mat">{{ mat.nom }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="typeMateriel">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+        <td mat-cell *matCellDef="let mat">{{ mat.typeMateriel }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="statut">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Statut</th>
+        <td mat-cell *matCellDef="let mat">{{ mat.statut }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantite">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantité</th>
+        <td mat-cell *matCellDef="let mat">{{ mat.quantite }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dateAchat">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date d'achat</th>
+        <td mat-cell *matCellDef="let mat">{{ mat.dateAchat | date:'short' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="fournisseur">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Fournisseur</th>
+        <td mat-cell *matCellDef="let mat">{{ mat.fournisseur }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let mat">
+          <button mat-button color="accent" (click)="editMateriel(mat.id)">Modifier</button>
+          <button mat-button color="warn" (click)="deleteMateriel(mat.id)">Supprimer</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

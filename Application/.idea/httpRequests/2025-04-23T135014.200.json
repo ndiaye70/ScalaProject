@@ -1,0 +1,11 @@
+[
+  {
+    "bloc": "B",
+    "capacite": 2,
+    "dateDerniereMaintenance": "2025-04-01T10:00:00",
+    "equipements": "Télévision, Climatisation",
+    "id": 1,
+    "numero": "B203",
+    "statut": "Occupée"
+  }
+]

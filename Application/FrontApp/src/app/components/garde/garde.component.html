@@ -1,0 +1,83 @@
+<div class="gardes-container">
+
+
+  <!-- Titre + bouton ajout -->
+  <div class="header-row">
+    <h2>Gestion des Gardes</h2>
+    <button mat-raised-button color="primary" (click)="ajouterGarde()">Ajouter Garde</button>
+  </div>
+
+  <!-- Barre de recherche -->
+  <mat-form-field appearance="outline" class="search-bar">
+    <mat-label>Rechercher une garde</mat-label>
+    <input matInput placeholder="Nom, prénom, spécialité..." (keyup)="applyFilter($event)">
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="full-width-table">
+
+
+    <!-- ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let garde">{{ garde.id }}</td>
+      </ng-container>
+
+      <!-- Nom -->
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom</th>
+        <td mat-cell *matCellDef="let garde">{{ personnels[garde.personnelId].nom || '-' }}</td>
+      </ng-container>
+
+      <!-- Prénom -->
+      <ng-container matColumnDef="prenom">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Prénom</th>
+        <td mat-cell *matCellDef="let garde">{{ personnels[garde.personnelId].prenom || '-' }}</td>
+      </ng-container>
+
+      <!-- Type -->
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+        <td mat-cell *matCellDef="let garde">{{ personnels[garde.personnelId].typePersonnel || '-' }}</td>
+      </ng-container>
+
+      <!-- Spécialité -->
+      <ng-container matColumnDef="specialite">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Spécialité</th>
+        <td mat-cell *matCellDef="let garde">{{ personnels[garde.personnelId].specialite || '-' }}</td>
+      </ng-container>
+
+      <!-- Téléphone -->
+      <ng-container matColumnDef="telephone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Téléphone</th>
+        <td mat-cell *matCellDef="let garde">{{ personnels[garde.personnelId].telephone || '-' }}</td>
+      </ng-container>
+
+      <!-- Heure Début -->
+      <ng-container matColumnDef="heureDebut">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Heure Début</th>
+        <td mat-cell *matCellDef="let garde">{{ garde.heureDebut }}</td>
+      </ng-container>
+
+      <!-- Heure Fin -->
+      <ng-container matColumnDef="heureFin">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Heure Fin</th>
+        <td mat-cell *matCellDef="let garde">{{ garde.heureFin }}</td>
+      </ng-container>
+
+      <!-- Actions -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let garde">
+          <button mat-button color="primary" (click)="modifierGarde(garde.id)">Modifier</button>
+          <button mat-button color="warn" (click)="supprimerGarde(garde.id!)">Supprimer</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

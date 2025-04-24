@@ -1,0 +1,70 @@
+<div class="rendez-vous-container">
+
+  <!-- Header -->
+  <div class="header-row">
+    <h2>Gestion des Rendez-vous</h2>
+    <button mat-raised-button color="primary" (click)="ajouterRendezVous()">Ajouter un Rendez-vous</button>
+  </div>
+
+  <!-- Recherche -->
+  <mat-form-field appearance="outline" class="search-bar">
+    <mat-label>Rechercher un rendez-vous</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="ID, motif, statut...">
+  </mat-form-field>
+
+  <!-- Table -->
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort class="full-width-table">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let rdv">{{ rdv.id }}</td>
+      </ng-container>
+
+      <!-- patientId -->
+      <ng-container matColumnDef="patientId">
+        <th mat-header-cell *matHeaderCellDef>Patient</th>
+        <td mat-cell *matCellDef="let rv">
+          {{ patientMap.get(rv.patientId) || rv.patientId }}
+        </td>
+      </ng-container>
+
+      <!-- personnelId -->
+      <ng-container matColumnDef="personnelId">
+        <th mat-header-cell *matHeaderCellDef>Personnel</th>
+        <td mat-cell *matCellDef="let rv">
+          {{ personnelMap.get(rv.personnelId) || rv.personnelId }}
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="dateHeure">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+        <td mat-cell *matCellDef="let rdv">{{ rdv.dateHeure | date:'short' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="motif">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Motif</th>
+        <td mat-cell *matCellDef="let rdv">{{ rdv.motif }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="statut">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Statut</th>
+        <td mat-cell *matCellDef="let rdv">{{ rdv.statut }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let rdv">
+          <button mat-button color="accent" (click)="editRendezVous(rdv.id!)">Modifier</button>
+          <button mat-button color="warn" (click)="deleteRendezVous(rdv.id!)">Supprimer</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<h2>{{ isEditMode ? 'Modifier' : 'Nouvelle' }} hospitalisation</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Date de début</mat-label>
+    <input matInput [matDatepicker]="picker1" formControlName="dateDebut" required>
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+    <mat-error *ngIf="form.get('dateDebut')?.hasError('required')">Date requise</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Date de fin</mat-label>
+    <input matInput [matDatepicker]="picker2" formControlName="dateFin">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Motif</mat-label>
+    <textarea matInput formControlName="motif" rows="2"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Notes</mat-label>
+    <textarea matInput formControlName="notes" rows="3"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Médecin responsable</mat-label>
+    <mat-select formControlName="personnelResponsableId">
+      <mat-option *ngFor="let medecin of medecins" [value]="medecin.id">
+        {{ medecin.nom }} {{ medecin.prenom }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Lit</mat-label>
+    <mat-select formControlName="litId">
+      <mat-option *ngFor="let lit of lits" [value]="lit.id">
+        Lit n° {{ lit.numero }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <!-- Boutons -->
+  <div class="actions" style="margin-top: 24px; display: flex; justify-content: flex-end; gap: 12px;">
+    <button mat-stroked-button type="button" color="primary" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon> Annuler
+    </button>
+    <button mat-raised-button type="submit" color="accent" [disabled]="form.invalid">
+      <mat-icon>save</mat-icon> Enregistrer
+    </button>
+  </div>
+</form>

@@ -1,0 +1,24 @@
+{
+  "dossiers": [
+    {
+      "allergies": "Non signalé",
+      "antecedents": "Pas d'antécédent",
+      "dateCreation": "2025-04-07T11:55:27.159478",
+      "id": 1,
+      "notes": "RAS\nRéévaluation nécessaire sous 48h\nConsultation du 2023-11-15T14:30: Réévaluation nécessaire sous 48h",
+      "patientId": 1,
+      "traitementsEnCours": "Aucun\nParacétamol 1g x3/j pendant 5 jours + repos"
+    }
+  ],
+  "patient": {
+    "adresse": "Conakry",
+    "codePatient": "PAT0012",
+    "dateNaissance": "1992-06-21",
+    "id": 1,
+    "nom": "Diallo",
+    "numeroAssurance": "GUIN9999",
+    "prenom": "Aminata",
+    "sexe": "F",
+    "telephone": "7755332212"
+  }
+}

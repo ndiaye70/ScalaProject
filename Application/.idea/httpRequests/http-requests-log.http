@@ -1,0 +1,827 @@
+POST http://localhost:8081/paiements
+Content-Type: application/json
+Content-Length: 122
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": 6,
+  "montant": 4000,
+  "mode": "Chéque",
+  "datePaiement": "2025-04-10T14:00:00",
+  "reference": null
+}
+
+<> 2025-04-23T165507.201.txt
+
+###
+
+POST http://localhost:8081/paiements
+Content-Type: application/json
+Content-Length: 127
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "patientId": 6,
+  "montant": 4000,
+  "mode": "Chéque",
+  "datePaiement": "2025-04-11T00:00:00.000Z",
+  "reference": null
+}
+
+<> 2025-04-23T165433.400.txt
+
+###
+
+GET http://localhost:8081/paiements/patient/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T165419.200.json
+
+###
+
+PUT http://localhost:8081/chambres/1
+Content-Type: application/json
+Content-Length: 177
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "numero": "B203",
+  "typeChambre": "Double",
+  "etage": 2,
+  "bloc": "B",
+  "statut": "Occupée",
+  "dateDerniereMaintenance": "null",
+  "capacite": 2,
+  "equipements": ""
+}
+
+<> 2025-04-23T135317.400.txt
+
+###
+
+PUT http://localhost:8081/chambres/1
+Content-Type: application/json
+Content-Length: 192
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "numero": "B203",
+  "typeChambre": "Double",
+  "etage": 2,
+  "bloc": "B",
+  "statut": "Occupée",
+  "dateDerniereMaintenance": "2025-04-01T10:00:00",
+  "capacite": 2,
+  "equipements": ""
+}
+
+<> 2025-04-23T135301.200.txt
+
+###
+
+PUT http://localhost:8081/chambres/1
+Content-Type: application/json
+Content-Length: 173
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "numero": "B203",
+  "typeChambre": "Double",
+  "etage": 2,
+  "bloc": "B",
+  "statut": "Occupée",
+  "dateDerniereMaintenance": "",
+  "capacite": 2,
+  "equipements": ""
+}
+
+<> 2025-04-23T135246.400.txt
+
+###
+
+PUT http://localhost:8081/chambres/1
+Content-Type: application/json
+Content-Length: 192
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "numero": "B203",
+  "typeChambre": "Double",
+  "etage": 2,
+  "bloc": "B",
+  "statut": "Occupée",
+  "dateDerniereMaintenance": "2025-04-01T10:00:00",
+  "capacite": 2,
+  "equipements": ""
+}
+
+<> 2025-04-23T135143.200.txt
+
+###
+
+GET http://localhost:8081/chambres
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T135135.200.json
+
+###
+
+POST http://localhost:8081/chambres
+Content-Type: application/json
+Content-Length: 199
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "numero": "B203",
+  "typeChambre": "Double",
+  "etage": 2,
+  "bloc": "B",
+  "statut": "Libre",
+  "dateDerniereMaintenance": null,
+  "capacite": 2,
+  "equipements": "Télévision, Climatisation"
+}
+
+<> 2025-04-23T135125.500.txt
+
+###
+
+PUT http://localhost:8081/chambres/1
+Content-Type: application/json
+Content-Length: 192
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "numero": "B203",
+  "typeChambre": "Double",
+  "etage": 2,
+  "bloc": "B",
+  "statut": "Occupée",
+  "dateDerniereMaintenance": "2025-04-01T10:00:00",
+  "capacite": 2,
+  "equipements": ""
+}
+
+<> 2025-04-23T135106.200.txt
+
+###
+
+PUT http://localhost:8081/chambres/1
+Content-Type: application/json
+Content-Length: 177
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "numero": "B203",
+  "typeChambre": "Double",
+  "etage": 2,
+  "bloc": "B",
+  "statut": "Occupée",
+  "dateDerniereMaintenance": "null",
+  "capacite": 2,
+  "equipements": ""
+}
+
+<> 2025-04-23T135047.400.txt
+
+###
+
+PUT http://localhost:8081/chambres/1
+Content-Type: application/json
+Content-Length: 173
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "numero": "B203",
+  "typeChambre": "Double",
+  "etage": 2,
+  "bloc": "B",
+  "statut": "Occupée",
+  "dateDerniereMaintenance": "",
+  "capacite": 2,
+  "equipements": ""
+}
+
+<> 2025-04-23T135034.400.txt
+
+###
+
+GET http://localhost:8081/chambres
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T135014.200.json
+
+###
+
+GET http://localhost:8081/gardes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T093811.200.json
+
+###
+
+GET http://localhost:8081/gardes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T093507.200.json
+
+###
+
+GET http://localhost:8081/gardes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T092716.200.json
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+Content-Length: 146
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebutPeriode": "2025-04-01",
+  "dateFinPeriode": "2025-04-29",
+  "heureDebut": "08:00:00",
+  "heureFin": "18:00:00"
+}
+
+<> 2025-04-23T092711.201.json
+
+###
+
+GET http://localhost:8081/gardes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T092606.200.json
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+Content-Length: 146
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebutPeriode": "2025-05-01",
+  "dateFinPeriode": "2025-05-05",
+  "heureDebut": "08:00:00",
+  "heureFin": "18:00:00"
+}
+
+<> 2025-04-23T092553.201.json
+
+###
+
+GET http://localhost:8081/gardes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T092516.200.json
+
+###
+
+GET http://localhost:8081/gardes?personnelId=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T092507.200.json
+
+###
+
+GET http://localhost:8081/gardes
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T092501.405.txt
+
+###
+
+GET http://localhost:8081/patients/1/with-dossiers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+content-length: 221
+
+GET http://localhost:8081/patients
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDU0MDAyNjgsImV4cCI6MTc0NTQwMzg2OH0.hx_QaYOm6bPSsdHtBB1Mapv9t4SQvVYkcdLEdcKhJ4o
+
+<> 2025-04-23T092451.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 61
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "admin@hospital.com",
+  "password": "admin123"
+}
+
+<> 2025-04-23T092429.200.txt
+
+###
+
+GET http://localhost:8081/gardes
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T092332.405.txt
+
+###
+
+GET http://localhost:8081/gardes?personnelId=1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-23T000629.405.txt
+
+###
+
+GET http://localhost:8081/gardes?personnelId=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDUzNTQ3MjksImV4cCI6MTc0NTM1ODMyOX0.vXTFJzUDcuOTrN16IuP1UjYApLzBECuCkOrIPVHtlRo
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-22T204928.200.json
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDUzNTQ3MjksImV4cCI6MTc0NTM1ODMyOX0.vXTFJzUDcuOTrN16IuP1UjYApLzBECuCkOrIPVHtlRo
+Content-Length: 146
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebutPeriode": "2025-05-01",
+  "dateFinPeriode": "2025-05-05",
+  "heureDebut": "08:00:00",
+  "heureFin": "18:00:00"
+}
+
+<> 2025-04-22T204811.201.json
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDUzNTQ3MjksImV4cCI6MTc0NTM1ODMyOX0.vXTFJzUDcuOTrN16IuP1UjYApLzBECuCkOrIPVHtlRo
+Content-Length: 154
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebutPeriode": "2025-05-01",
+  "dateFinPeriode": "2025-05-05",
+  "heureDebutJour": "08:00:00",
+  "heureFinJour": "18:00:00"
+}
+
+<> 2025-04-22T204749.400.txt
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Authorization: Bearer {{token}}
+Content-Length: 154
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebutPeriode": "2025-05-01",
+  "dateFinPeriode": "2025-05-05",
+  "heureDebutJour": "08:00:00",
+  "heureFinJour": "18:00:00"
+}
+
+<> 2025-04-22T204724.405.txt
+
+###
+
+GET http://localhost:8081/patients/1/with-dossiers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDUzNTQ3MjksImV4cCI6MTc0NTM1ODMyOX0.vXTFJzUDcuOTrN16IuP1UjYApLzBECuCkOrIPVHtlRo
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+content-length: 221
+
+GET http://localhost:8081/patients
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDUzNTQ3MjksImV4cCI6MTc0NTM1ODMyOX0.vXTFJzUDcuOTrN16IuP1UjYApLzBECuCkOrIPVHtlRo
+
+<> 2025-04-22T204611.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 61
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "admin@hospital.com",
+  "password": "admin123"
+}
+
+<> 2025-04-22T204529.200.txt
+
+###
+
+GET http://localhost:8081/patients/1/with-dossiers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDUxOTkyMDUsImV4cCI6MTc0NTIwMjgwNX0.6l8xHSw--_CgXArqksIXSpAcnMBHvnwBzdX4fMHabh0
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+content-length: 221
+
+GET http://localhost:8081/patients
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBob3NwaXRhbC5jb20iLCJpYXQiOjE3NDUxOTkyMDUsImV4cCI6MTc0NTIwMjgwNX0.6l8xHSw--_CgXArqksIXSpAcnMBHvnwBzdX4fMHabh0
+
+<> 2025-04-22T204513.405.txt
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Content-Length: 154
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebutPeriode": "2025-05-01",
+  "dateFinPeriode": "2025-05-05",
+  "heureDebutJour": "08:00:00",
+  "heureFinJour": "18:00:00"
+}
+
+<> 2025-04-22T203833.405.txt
+
+###
+
+GET http://localhost:8081/gardes
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-22T203825.405.txt
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Content-Length: 154
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebutPeriode": "2025-05-01",
+  "dateFinPeriode": "2025-05-05",
+  "heureDebutJour": "08:00:00",
+  "heureFinJour": "18:00:00"
+}
+
+<> 2025-04-22T203814.405.txt
+
+###
+
+GET http://localhost:8081/gardes?personnelId=1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-22T203543.405.txt
+
+###
+
+GET http://localhost:8081/gardes
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-22T203540.405.txt
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Content-Length: 145
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebut": "2025-04-08T08:00:00",
+  "dateFin": "2025-04-08T20:00:00",
+  "typeGarde": "Jour",
+  "statut": "Planifiée"
+}
+
+<> 2025-04-22T203534.405.txt
+
+###
+
+GET http://localhost:8081/gardes
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-04-22T203524.405.txt
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Content-Length: 154
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebutPeriode": "2025-05-01",
+  "dateFinPeriode": "2025-05-05",
+  "heureDebutJour": "08:00:00",
+  "heureFinJour": "18:00:00"
+}
+
+<> 2025-04-22T203505.405.txt
+
+###
+
+POST http://localhost:8081/gardes
+Content-Type: application/json
+Content-Length: 154
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnelId": 1,
+  "dateDebutPeriode": "2025-05-01",
+  "dateFinPeriode": "2025-05-05",
+  "heureDebutJour": "08:00:00",
+  "heureFinJour": "18:00:00"
+}
+
+<> 2025-04-22T203430.405.txt
+
+###
+
+POST http://localhost:8081/personnel/avec-utilisateur
+Content-Type: application/json
+Content-Length: 325
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnel": {
+    "nom": "Durand",
+    "prenom": "Claire",
+    "typePersonnel": "Medecin",
+    "specialite": "Pédiatrie",
+    "telephone": "0612345678",
+    "horaires": "08:00-16:00"
+  },
+  "utilisateur": {
+    "email": "claire.durand@example.com",
+    "motDePasse": "motDePasseSecurise123",
+    "role": "medecin"
+  }
+}
+
+<> 2025-04-22T024825.400.txt
+
+###
+
+GET http://localhost:8081/personnel/infirmiers
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+content-length: 0
+
+<> 2025-04-22T024823.200.json
+
+###
+
+POST http://localhost:8081/personnel/avec-utilisateur
+Content-Type: application/json
+Content-Length: 325
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnel": {
+    "nom": "Durand",
+    "prenom": "Claire",
+    "typePersonnel": "Medecin",
+    "specialite": "Pédiatrie",
+    "telephone": "0612345678",
+    "horaires": "08:00-16:00"
+  },
+  "utilisateur": {
+    "email": "claire.durand@example.com",
+    "motDePasse": "motDePasseSecurise123",
+    "role": "medecin"
+  }
+}
+
+<> 2025-04-22T024407.405.txt
+
+###
+
+GET http://localhost:8081/personnel/infirmiers
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+content-length: 0
+
+<> 2025-04-22T024404.200.json
+
+###
+
+POST http://localhost:8081/personnel/avec-utilisateur
+Content-Type: application/json
+Content-Length: 325
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnel": {
+    "nom": "Durand",
+    "prenom": "Claire",
+    "typePersonnel": "Medecin",
+    "specialite": "Pédiatrie",
+    "telephone": "0612345678",
+    "horaires": "08:00-16:00"
+  },
+  "utilisateur": {
+    "email": "claire.durand@example.com",
+    "motDePasse": "motDePasseSecurise123",
+    "role": "medecin"
+  }
+}
+
+<> 2025-04-22T024352.405.txt
+
+###
+
+POST http://localhost:8081/personnel/avec-utilisateur
+Content-Type: application/json
+Content-Length: 325
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnel": {
+    "nom": "Durand",
+    "prenom": "Claire",
+    "typePersonnel": "Medecin",
+    "specialite": "Pédiatrie",
+    "telephone": "0612345678",
+    "horaires": "08:00-16:00"
+  },
+  "utilisateur": {
+    "email": "claire.durand@example.com",
+    "motDePasse": "motDePasseSecurise123",
+    "role": "medecin"
+  }
+}
+
+<> 2025-04-22T024027.400.txt
+
+###
+
+GET http://localhost:8081/personnel/infirmiers
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+content-length: 0
+
+<> 2025-04-22T024024.200.json
+
+###
+
+POST http://localhost:8081/personnel/avec-utilisateur
+Content-Type: application/json
+Content-Length: 357
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "personnel": {
+    "id": null,
+    "nom": "Durand",
+    "prenom": "Claire",
+    "typePersonnel": "Medecin",
+    "specialite": "Pédiatrie",
+    "telephone": "0612345678",
+    "horaires": "08:00-16:00"
+  },
+  "utilisateur": {
+    "id": null,
+    "email": "claire.durand@example.com",
+    "motDePasse": "motDePasseSecurise123",
+    "role": "medecin"
+  }
+}
+
+<> 2025-04-22T023609.400.txt
+
+###
+

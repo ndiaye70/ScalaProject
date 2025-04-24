@@ -1,0 +1,35 @@
+<mat-card *ngIf="!loading && dossier">
+  {{dossier}}
+  <h2 style="color:#3f51b5;">Modifier le Dossier Médical</h2>
+
+  <form (ngSubmit)="updateDossier()" #dossierForm="ngForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Antécédents</mat-label>
+      <textarea matInput [(ngModel)]="dossier.antecedents" name="antecedents"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Allergies</mat-label>
+      <textarea matInput [(ngModel)]="dossier.allergies" name="allergies"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Traitements en cours</mat-label>
+      <textarea matInput [(ngModel)]="dossier.traitementsEnCours" name="traitementsEnCours"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Notes / Observations</mat-label>
+      <textarea matInput [(ngModel)]="dossier.notes" name="notes"></textarea>
+    </mat-form-field>
+
+    <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 16px;">
+      <button mat-button [routerLink]="['/dossier', dossier.id]">Annuler</button>
+      <button mat-raised-button color="primary" type="submit">Enregistrer</button>
+    </div>
+  </form>
+
+  <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
+</mat-card>
+
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>

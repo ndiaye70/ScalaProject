@@ -1,0 +1,83 @@
+<h2>Chambres & Lits par Bloc</h2>
+
+<mat-form-field appearance="outline" style="margin-right: 16px; width: 250px;">
+  <mat-label>Filtrer par statut</mat-label>
+  <mat-select [(ngModel)]="selectedStatut">
+    <mat-option value="">Tous</mat-option>
+    <mat-option value="Libre">Libre</mat-option>
+    <mat-option value="Occupée">Occupée</mat-option>
+    <mat-option value="Hors service">Hors service</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="outline" style="width: 250px;">
+  <mat-label>Rechercher par numéro</mat-label>
+  <input matInput [(ngModel)]="searchNumero" placeholder="Ex: A101" />
+</mat-form-field>
+
+<div style="text-align: right;">
+  <button mat-raised-button color="primary" (click)="ouvrirFormChambre()">Ajouter une chambre</button>
+</div>
+
+
+
+<div *ngIf="loading">Chargement...</div>
+
+<div *ngIf="!loading && Object.keys(chambresParBloc).length === 0">
+  Aucune chambre trouvée.
+</div>
+
+<mat-accordion *ngIf="!loading">
+  <mat-expansion-panel *ngFor="let bloc of Object.keys(chambresParBloc)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Bloc {{ bloc }}</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div *ngFor="let chambre of getChambresFiltres(bloc)" style="margin: 10px 0;">
+    <mat-card>
+      <mat-card-title class="flex justify-between items-center">
+        <span>Chambre {{ chambre.numero }} - {{ chambre.statut }}</span>
+        <span>
+    <button mat-icon-button color="accent" (click)="ouvrirFormChambre(chambre)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" (click)="supprimerChambre(chambre)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </span>
+      </mat-card-title>
+
+
+      <mat-card-content>
+          <p>Capacité : {{ chambre.capacite }}</p>
+          <p *ngIf="chambre.equipements">Équipements : {{ chambre.equipements }}</p>
+          <p *ngIf="chambre.dateDerniereMaintenance">
+            Dernière maintenance : {{ chambre.dateDerniereMaintenance | date:'shortDate' }}
+          </p>
+
+          <h4 style="margin-top: 15px;">Lits</h4>
+        <button mat-mini-fab color="primary" (click)="ouvrirFormNouveauLit(chambre)">
+          <mat-icon>add</mat-icon>
+        </button>
+
+        <ul>
+          <li *ngFor="let lit of litsParChambre[chambre.id!]">
+    <span>
+      Lit {{ lit.numero }} - <strong>{{ lit.statut }}</strong>
+    </span>
+            <span style="margin-left: 10px;">
+      <button mat-icon-button color="accent" (click)="modifierLit(lit)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="supprimerLit(lit)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </span>
+          </li>
+        </ul>
+
+      </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

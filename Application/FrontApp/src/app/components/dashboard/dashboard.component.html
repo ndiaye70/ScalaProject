@@ -1,0 +1,84 @@
+<mat-drawer-container class="app-container" style="height: 100vh;">
+
+  <!-- Sidebar -->
+  <mat-drawer #mydrawer opened="true" mode="side" position="start"
+              style="width: 250px; background-color: #ffffff; border-right: 1px solid #e0e0e0;">
+
+    <!-- App name -->
+    <div style="padding: 20px 16px; font-size: 20px; font-weight: 600; color: #1a237e; border-bottom: 1px solid #e0e0e0;">
+      Werral Ak Jamm
+    </div>
+
+    <!-- Navigation -->
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button routerLink="/dashboard" class="nav-button">
+          <mat-icon>home</mat-icon>
+          <span class="nav-text">Tableau de bord</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/patients" class="nav-button">
+          <mat-icon>person</mat-icon>
+          <span class="nav-text">Gestion des patients</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/personnels" class="nav-button">
+          <mat-icon>people</mat-icon>
+          <span class="nav-text">Gestion du personnel</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/materiels" class="nav-button">
+          <mat-icon>business</mat-icon>
+          <span class="nav-text">Ressources matérielles</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/chambres-lits" class="nav-button">
+          <mat-icon>hotel</mat-icon>
+          <span class="nav-text">Chambres & Lits</span>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button routerLink="/paiements" class="nav-button">
+          <mat-icon>credit_card</mat-icon>
+          <span class="nav-text">Paiements</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/rendez-vous" class="nav-button">
+          <mat-icon>calendar_today</mat-icon>
+          <span class="nav-text">Rendez-vous</span>
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/gardes" class="nav-button">
+          <mat-icon>assignment</mat-icon>
+          <span class="nav-text">Gestion de garde</span>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <!-- Main content -->
+  <mat-drawer-content style="height: 100%;">
+
+    <!-- Toolbar avec menu + logout -->
+    <mat-toolbar class="custom-toolbar">
+      <button mat-icon-button (click)="mydrawer.toggle()" style="margin-left: 10px; margin-right: 16px;">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span style="flex: auto;"></span>
+      <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+    </mat-toolbar>
+
+    <!-- Contenu page -->
+    <div style="padding: 24px;">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>

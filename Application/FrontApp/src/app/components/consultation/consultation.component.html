@@ -1,0 +1,54 @@
+<!-- En-tête avec titre, nom du patient et bouton Nouvelle consultation -->
+<div class="header-row" style="display: flex; justify-content: space-between; align-items: center;">
+  <h2>
+    Consultations du patient
+    <span *ngIf="patient">: {{ patient.prenom }} {{ patient.nom }}</span>
+  </h2>
+
+  <button mat-raised-button color="primary" [routerLink]="['/addConsultation', patient?.id]">
+    <mat-icon>add</mat-icon> Nouvelle consultation
+  </button>
+</div>
+
+<!-- Bouton de retour -->
+<div style="margin: 16px 0;">
+  <button mat-stroked-button color="primary" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon> Retour au Dossier Médical
+  </button>
+</div>
+
+<!-- Chargement -->
+<div *ngIf="isLoading">Chargement...</div>
+
+<!-- Liste des consultations -->
+<div *ngIf="!isLoading && consultations.length > 0; else noConsultations">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let consult of consultations">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ consult.dateRealisation | date: 'medium' }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p><strong>Médecin :</strong> {{ medecinsMap[consult.personnelId] || 'Inconnu' }}</p>
+      <p><strong>Symptômes:</strong> {{ consult.symptomes }}</p>
+      <p><strong>Diagnostic:</strong> {{ consult.diagnostic }}</p>
+      <p><strong>Prescriptions:</strong> {{ consult.prescriptions }}</p>
+      <p><strong>Notes internes:</strong> {{ consult.notesInternes }}</p>
+
+      <!-- Actions Modifier / Supprimer -->
+      <div style="margin-top: 12px;">
+        <button mat-button color="accent" [routerLink]="['/editConsultation', consult.id]">
+          <mat-icon>edit</mat-icon> Modifier
+        </button>
+        <button mat-button color="warn" (click)="deleteConsultation(consult.id)">
+          <mat-icon>delete</mat-icon> Supprimer
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- Aucun résultat -->
+<ng-template #noConsultations>
+  <p>Aucune consultation enregistrée pour ce patient.</p>
+</ng-template>
