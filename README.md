@@ -31,4 +31,6 @@ Email : admin1@hopital.sn
 
 Mot de passe : motdepasse1
 
+Video Demonstration
+https://drive.google.com/file/d/1HJddY8476Q4kJENPUQ8XbK7FTGUvqcb8/view?usp=drive_link
 
