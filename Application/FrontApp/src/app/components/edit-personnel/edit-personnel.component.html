@@ -1,0 +1,80 @@
+<h2>{{ isEditMode ? 'Modifier' : 'Nouveau' }} personnel</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-content>
+
+      <!-- Nom -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nom" />
+        <mat-error *ngIf="form.get('nom')?.hasError('required')">
+          Le nom est requis
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Prénom -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Prénom</mat-label>
+        <input matInput formControlName="prenom" />
+        <mat-error *ngIf="form.get('prenom')?.hasError('required')">
+          Le prénom est requis
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Spécialité -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Spécialité</mat-label>
+        <input matInput formControlName="specialite" />
+        <mat-error *ngIf="form.get('specialite')?.hasError('required')">
+          La spécialité est requise
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Type de personnel -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Type de personnel</mat-label>
+        <mat-select formControlName="typePersonnel">
+          <mat-option value="Medecin">Médecin</mat-option>
+          <mat-option value="Infirmier">Infirmier</mat-option>
+          <mat-option value="Secretaire">Secrétaire</mat-option>
+          <mat-option value="Autre">Autre</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('typePersonnel')?.hasError('required')">
+          Le type est requis
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Téléphone -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Téléphone</mat-label>
+        <input matInput formControlName="telephone" />
+        <mat-error *ngIf="form.get('telephone')?.hasError('required')">
+          Le téléphone est requis
+        </mat-error>
+        <mat-error *ngIf="form.get('telephone')?.hasError('pattern')">
+          Numéro invalide
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Horaires -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Horaires</mat-label>
+        <textarea matInput rows="2" formControlName="horaires"></textarea>
+        <mat-error *ngIf="form.get('horaires')?.hasError('required')">
+          Les horaires sont requis
+        </mat-error>
+      </mat-form-field>
+
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-stroked-button color="warn" type="button" (click)="goBack()">
+        <mat-icon>cancel</mat-icon> Annuler
+      </button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        <mat-icon>save</mat-icon> Enregistrer
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

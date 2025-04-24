@@ -1,0 +1,56 @@
+<!-- En-tête avec titre, nom du patient et bouton Nouvelle hospitalisation -->
+<div class="header-row" style="display: flex; justify-content: space-between; align-items: center;">
+  <h2>
+    Hospitalisations du patient
+    <span *ngIf="patient">: {{ patient.prenom }} {{ patient.nom }}</span>
+  </h2>
+
+  <button mat-raised-button color="primary" [routerLink]="['/addHospitalisation', patient?.id]">
+    <mat-icon>add</mat-icon> Nouvelle hospitalisation
+  </button>
+</div>
+
+<!-- Bouton de retour -->
+<div style="margin: 16px 0;">
+  <button mat-stroked-button color="primary" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon> Retour au Dossier Médical
+  </button>
+</div>
+
+<!-- Chargement -->
+<div *ngIf="isLoading">Chargement...</div>
+
+<!-- Liste des hospitalisations -->
+<div *ngIf="!isLoading && hospitalisations.length > 0; else noHospitalisations">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let hosp of hospitalisations">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ getDateRange(hosp) }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <p><strong>Lit :</strong> {{ getLitNumero(hosp.litId) }}</p>
+      <p><strong>Chambre :</strong> {{ getChambreNumeroByLitId(hosp.litId) }}</p>
+      <p><strong>Motif :</strong> {{ hosp.motif || 'Non précisé' }}</p>
+      <p><strong>Responsable :</strong> {{ getMedecinNom(hosp.personnelResponsableId) }}</p>
+      <p><strong>Notes :</strong> {{ hosp.notes || 'Aucune note' }}</p>
+
+      <!-- Actions -->
+      <div style="margin-top: 12px;">
+        <button mat-button color="accent" [routerLink]="['/editHospitalisation', hosp.id]">
+          <mat-icon>edit</mat-icon> Modifier
+        </button>
+        <button mat-button color="warn" (click)="deleteHospitalisation(hosp.id)">
+          <mat-icon>delete</mat-icon> Supprimer
+        </button>
+      </div>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
+
+<!-- Aucun résultat -->
+<ng-template #noHospitalisations>
+  <p>Aucune hospitalisation enregistrée pour ce patient.</p>
+</ng-template>

@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>{{ data.lit.id ? 'Modifier un lit' : 'Ajouter un lit' }}</h2>
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Numéro</mat-label>
+    <input matInput formControlName="numero" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Statut</mat-label>
+    <mat-select formControlName="statut">
+      <mat-option value="Libre">Libre</mat-option>
+      <mat-option value="Occupé">Occupé</mat-option>
+      <mat-option value="Réservé">Réservé</mat-option>
+      <mat-option value="En nettoyage">En nettoyage</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Annuler</button>
+  <button mat-flat-button color="primary" (click)="save()" [disabled]="form.invalid">Enregistrer</button>
+</mat-dialog-actions>

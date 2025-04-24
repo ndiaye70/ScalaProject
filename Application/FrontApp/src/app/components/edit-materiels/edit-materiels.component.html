@@ -1,0 +1,42 @@
+<div class="form-container" *ngIf="form">
+  <h2>{{ isEditMode ? 'Modifier' : 'Ajouter' }} un Matériel</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName="nom" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Type de Matériel</mat-label>
+      <input matInput formControlName="typeMateriel" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Quantité</mat-label>
+      <input matInput type="number" formControlName="quantite" required min="1">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Statut</mat-label>
+      <input matInput formControlName="statut" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Date d'achat</mat-label>
+      <input matInput type="date" formControlName="dateAchat" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Fournisseur</mat-label>
+      <input matInput formControlName="fournisseur" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      {{ isEditMode ? 'Modifier' : 'Ajouter' }}
+    </button>
+    <button mat-button routerLink="/materiels">Annuler</button>
+
+  </form>
+</div>

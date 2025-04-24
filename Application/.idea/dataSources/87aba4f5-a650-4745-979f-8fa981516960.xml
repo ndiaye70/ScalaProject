@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="testdb@localhost">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.52">
+    <root id="1">
+      <ServerVersion>16.1</ServerVersion>
+      <StartupTime>1743707878</StartupTime>
+    </root>
+    <database id="2" parent="1" name="testdb">
+      <Current>1</Current>
+      <ObjectId>34269</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <Comment>default administrative connection database</Comment>
+      <ObjectId>5</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="4" parent="1" name="IPSL">
+      <ObjectId>16398</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="5" parent="1" name="Reporting">
+      <ObjectId>16749</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="6" parent="1" name="back">
+      <ObjectId>25432</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="7" parent="1" name="back1">
+      <ObjectId>25705</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="8" parent="1" name="laravel">
+      <ObjectId>34268</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="9" parent="1" name="hellodb">
+      <ObjectId>34270</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="10" parent="1" name="Hospitaldb">
+      <ObjectId>34289</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+  </database-model>
+</dataSource>

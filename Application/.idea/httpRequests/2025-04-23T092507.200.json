@@ -1,0 +1,10 @@
+[
+  {
+    "dateDebutPeriode": "2025-05-01",
+    "dateFinPeriode": "2025-05-05",
+    "heureDebut": "08:00:00",
+    "heureFin": "18:00:00",
+    "id": 1,
+    "personnelId": 1
+  }
+]

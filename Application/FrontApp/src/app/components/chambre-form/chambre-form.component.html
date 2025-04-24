@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Modifier' : 'Ajouter' }} une Chambre</h2>
+<form [formGroup]="chambreForm" (ngSubmit)="onSubmit()" mat-dialog-content>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Numéro</mat-label>
+    <input matInput formControlName="numero">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Bloc</mat-label>
+    <input matInput formControlName="bloc">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Statut</mat-label>
+    <mat-select formControlName="statut">
+      <mat-option value="Libre">Libre</mat-option>
+      <mat-option value="Occupée">Occupée</mat-option>
+      <mat-option value="Hors service">Hors service</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Capacité</mat-label>
+    <input type="number" matInput formControlName="capacite">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Date de dernière maintenance</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dateDerniereMaintenance">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Équipements</mat-label>
+    <textarea matInput formControlName="equipements"></textarea>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-flat-button color="primary" [disabled]="chambreForm.invalid">{{ isEditMode ? 'Mettre à jour' : 'Ajouter' }}</button>
+  </div>
+</form>

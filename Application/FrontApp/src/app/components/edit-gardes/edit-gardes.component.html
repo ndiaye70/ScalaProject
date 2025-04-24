@@ -1,0 +1,50 @@
+<div class="edit-garde-container">
+  <h2>{{ isEditMode ? 'Modifier une Garde' : 'Ajouter une Garde' }}</h2>
+
+  <form [formGroup]="gardeForm" (ngSubmit)="onSubmit()">
+    <!-- Personnel -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Personnel</mat-label>
+      <mat-select formControlName="personnelId" required>
+        <mat-option *ngFor="let p of personnels" [value]="p.id">
+          {{ p.nom }} {{ p.prenom }} ({{ p.typePersonnel }})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Dates -->
+    <div class="date-group">
+      <mat-form-field appearance="outline">
+        <mat-label>Date Début</mat-label>
+        <input matInput type="date" formControlName="dateDebutPeriode" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date Fin</mat-label>
+        <input matInput type="date" formControlName="dateFinPeriode" required>
+      </mat-form-field>
+    </div>
+
+    <!-- Heures -->
+    <div class="time-group">
+      <mat-form-field appearance="outline">
+        <mat-label>Heure Début</mat-label>
+        <input matInput type="time" formControlName="heureDebut" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Heure Fin</mat-label>
+        <input matInput type="time" formControlName="heureFin" required>
+      </mat-form-field>
+    </div>
+
+    <!-- Bouton -->
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="gardeForm.invalid">
+        {{ isEditMode ? 'Mettre à jour' : 'Créer' }}
+      </button>
+      <button mat-button color="warn" type="button" (click)="
+      router.navigate(['/gardes'])">Annuler</button>
+    </div>
+  </form>
+</div>

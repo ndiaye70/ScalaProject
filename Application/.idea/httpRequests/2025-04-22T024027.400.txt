@@ -1,0 +1,2 @@
+The request content was malformed:
+Cannot invoke "spray.json.JsonReader.read(spray.json.JsValue)" because "reader" is null

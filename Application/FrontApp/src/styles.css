@@ -1,0 +1,152 @@
+/* styles.css */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root {
+  --primary: #3f51b5;
+  --accent: #ff4081;
+  --warn: #f44336;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: var(--primary);
+  --mdc-protected-button-label-text-color: white;
+}
+
+/* ... autres styles ... */
+.nav-button:hover {
+  background-color: #1a73e8;
+  color: white !important;
+}
+
+.nav-button:hover mat-icon {
+  color: white !important;
+}
+
+
+.login-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 40px 32px; /* Augmenté le padding top/bottom */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+  position: relative; /* Pour positionnement absolu des enfants */
+}
+
+/* Correction pour l'icône du titre */
+.form-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-top: 24px; /* Espace supplémentaire */
+}
+
+.form-header h2 {
+  color: #3f51b5;
+  margin: 16px 0 8px; /* Marge augmentée */
+  font-weight: 500;
+}
+
+.form-header p {
+  color: #757575;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Correction de l'icône principale */
+.form-icon {
+  font-size: 30px;
+  width: 48px;
+  height: 48px;
+  color: #3f51b5;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1; /* Important contre le clipping */
+  margin-bottom: 8px;
+}
+
+/* Styles pour les champs de formulaire */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-form-field .mat-form-field-wrapper {
+  padding-bottom: 0; /* Réduit l'espace sous les champs */
+}
+
+/* Styles pour les icônes */
+mat-icon {
+  font-size: 24px; /* Taille augmentée */
+  width: 24px;
+  height: 24px;
+  overflow: visible; /* Empêche le clipping */
+}
+
+mat-prefix mat-icon {
+  margin-right: 12px; /* Espacement augmenté */
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* Bouton de soumission */
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.submit-button:not([disabled]):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.2);
+}
+
+/* Message d'erreur */
+.error-message {
+  color: #f44336;
+  background: #ffebee;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.error-message mat-icon {
+  color: #f44336;
+  flex-shrink: 0; /* Empêche le rétrécissement */
+}
+
+/* Pied de formulaire */
+.form-footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.forgot-password {
+  color: #3f51b5;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.forgot-password:hover {
+  color: #1a237e;
+  text-decoration: underline;
+}
+
+/* Animation du spinner */
+mat-spinner {
+  margin-left: 8px;
+}
